@@ -63,21 +63,22 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Inconsolata", sans-serif;
 }
 .container {
   max-width: 500px;
-  margin: 30px auto;
+  margin: 30px 1%;
   overflow: auto;
   min-height: 300px;
-  border: 1px solid steelblue;
+  border: 2px solid rgb(243, 243, 243);
+  background: rgb(243, 243, 243);
   padding: 30px;
   border-radius: 5px;
 }

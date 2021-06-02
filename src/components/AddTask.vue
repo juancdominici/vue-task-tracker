@@ -64,6 +64,7 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400&display=swap");
 .add-form {
   margin-bottom: 40px;
 }
@@ -91,5 +92,8 @@ export default {
 .form-control-check input {
   flex: 2;
   height: 20px;
+}
+input {
+  font-family: "Inconsolata", sans-serif;
 }
 </style>

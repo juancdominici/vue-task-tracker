@@ -16,8 +16,8 @@ export default {
   props: {
     title: {
       type: String,
-      showAddTask: Boolean,
     },
+    showAddTask: Boolean,
   },
   components: {
     Button,

@@ -23,7 +23,7 @@ export default {
   color: red;
 }
 .task {
-  background: #f4f4f4;
+  background: rgb(253, 253, 253);
   margin: 5px;
   padding: 10px 20px;
   cursor: pointer;
