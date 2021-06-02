@@ -5,59 +5,30 @@
       title="Task Tracker"
       :showAddTask="showAddTask"
     />
-    <div v-if="showAddTask">
-      <AddTask @add-task="addTask" />
-    </div>
-    <Tasks
-      @toggle-reminder="toggleReminder"
-      @delete-task="deleteTask"
-      :tasks="tasks"
-    />
+    <router-view :showAddTask="showAddTask"></router-view>
+    <Footer />
   </div>
 </template>
 
 <script>
 import Header from "./components/Header";
-import Tasks from "./components/Tasks";
-import AddTask from "./components/AddTask";
+import Footer from "./components/Footer";
 
 export default {
   name: "App",
   components: {
     Header,
-    Tasks,
-    AddTask,
+    Footer,
   },
   data() {
     return {
-      tasks: [],
       showAddTask: false,
     };
   },
   methods: {
-    addTask(task) {
-      this.tasks = [...this.tasks, task];
-    },
-    deleteTask(id) {
-      if (confirm("Are you sure?"))
-        this.tasks = this.tasks.filter((t) => t.id !== id);
-    },
-    toggleReminder(id) {
-      this.tasks = this.tasks.map((t) =>
-        t.id === id ? { ...t, reminder: !t.reminder } : t
-      );
-    },
     toggleAddTask() {
       this.showAddTask = !this.showAddTask;
     },
-  },
-  created() {
-    this.tasks = [
-      { id: 1, text: "Doctor", day: "July 3 at 14:30", reminder: true },
-      { id: 2, text: "Date", day: "July 4 at 21:00", reminder: true },
-      { id: 3, text: "Meeting", day: "July 5 at 18:30", reminder: false },
-      { id: 4, text: "College", day: "July 7 at 9:00", reminder: true },
-    ];
   },
 };
 </script>
@@ -74,7 +45,7 @@ body {
 }
 .container {
   max-width: 500px;
-  margin: 30px 1%;
+  margin: 30px auto;
   overflow: auto;
   min-height: 300px;
   border: 2px solid rgb(243, 243, 243);
